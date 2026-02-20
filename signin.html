@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign In Page</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(120deg,#6a11cb,#2575fc);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:#fff;
+    width:320px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#2575fc;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#2575fc;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1a5fd0;
+    transform:scale(1.02);
+}
+
+.msg{
+    margin-top:10px;
+    text-align:center;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Sign In</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signin()">Sign In</button>
+    <div class="msg" id="msg"></div>
+</div>
+
+<script>
+function signin(){
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("msg");
+
+    if(email === "" || password === ""){
+        msg.style.color = "red";
+        msg.innerText = "Please fill all fields";
+        return;
+    }
+
+    msg.style.color = "green";
+    msg.innerText = "Sign in successful (demo only)";
+}
+</script>
+
+</body>
+</html>
